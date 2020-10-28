@@ -1,0 +1,101 @@
+{
+    "marker-green":
+    {
+        "visible": "true",
+        "pixelRatio": 1,
+        "x": 0,
+        "width": 32,
+        "y": 35,
+        "height": 32
+    },
+    "marker-grey":
+    {
+        "visible": "true",
+        "pixelRatio": 1,
+        "x": 0,
+        "width": 32,
+        "y": 105,
+        "height": 32
+    },
+    "marker-red":
+    {
+        "visible": "true",
+        "pixelRatio": 1,
+        "x": 0,
+        "width": 32,
+        "y": 315,
+        "height": 32
+    },
+    "marker-light":
+    {
+        "visible": "true",
+        "pixelRatio": 1,
+        "x": 0,
+        "width": 32,
+        "y": 175,
+        "height": 32
+    },
+    "marker-purple1":
+    {
+        "visible": "true",
+        "pixelRatio": 1,
+        "x": 0,
+        "width": 32,
+        "y": 280,
+        "height": 32
+    },
+    "marker-purple":
+    {
+        "visible": "true",
+        "pixelRatio": 1,
+        "x": 0,
+        "width": 32,
+        "y": 245,
+        "height": 32
+    },
+    "marker-light1":
+    {
+        "visible": "true",
+        "pixelRatio": 1,
+        "x": 0,
+        "width": 32,
+        "y": 210,
+        "height": 32
+    },
+    "marker-yellow":
+    {
+        "visible": "true",
+        "pixelRatio": 1,
+        "x": 0,
+        "width": 32,
+        "y": 350,
+        "height": 32
+    },
+    "marker-green1":
+    {
+        "visible": "true",
+        "pixelRatio": 1,
+        "x": 0,
+        "width": 32,
+        "y": 70,
+        "height": 32
+    },
+    "marker-blue":
+    {
+        "visible": "true",
+        "pixelRatio": 1,
+        "x": 0,
+        "width": 32,
+        "y": 0,
+        "height": 32
+    },
+    "marker-grey1":
+    {
+        "visible": "true",
+        "pixelRatio": 1,
+        "x": 0,
+        "width": 32,
+        "y": 140,
+        "height": 32
+    }
+}

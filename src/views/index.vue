@@ -7,7 +7,7 @@ var map = null
 export default {
     data() {
         return {
-            activeTab: '0'
+            popup: null
         }
     },
     mounted() {
@@ -142,6 +142,7 @@ export default {
             map.on('load', () => {
                 this.addControls();
                 this.addMarkerLayer();
+                this.addPopup();
                 setTimeout(() => {
                     this.showFreeMarkers()
                 }, 1000)
@@ -153,6 +154,51 @@ export default {
                 let zoom = map.getZoom()
                 console.log('点击: ' + lng + ', ' + lat + '. Zoom: ' + zoom)
             })
+        },
+        addPopup() {
+            const that = this;
+            that.popup = new mapboxgl.Popup({
+                closeButton: false,
+                closeOnClick: false,
+                className: 'map-popup',
+                offset: [0, -28],
+                anchor: 'bottom'
+            });
+            that.popup.on('open', function() {
+                var ele = $(that.popup.getElement());
+                var offset = ele.offset();
+                var top = offset.top;
+                var left = offset.left;
+                var right = ele.width() + left;
+                var mapEle = $(map.getContainer());
+                var mapOffset = mapEle.offset();
+                var mapTop = mapOffset.top;
+                var mapLeft = mapOffset.left;
+                var mapRight = mapEle.width() + mapLeft;
+                var center = map.getCenter();
+                var centerPx = map.project(center);
+                var h = 0,
+                    v = 0,
+                    size = 50;
+                if (top < mapTop) {
+                    v = mapTop - top + size;
+                }
+                if (left < mapLeft) {
+                    h = mapLeft - left + size + 300;
+                }
+                if (right > mapRight) {
+                    h = mapRight - right - size;
+                }
+                centerPx = [centerPx.x - h, centerPx.y - v];
+                map.panTo(map.unproject(centerPx));
+            });
+            that.popupArea = new mapboxgl.Popup({
+                closeButton: false,
+                closeOnClick: false,
+                className: 'map-popup',
+                offset: [0, -12],
+                anchor: 'bottom'
+            });
         },
         showFreeMarkers() {
             const arr = markers.filter(it => it.geometry.coordinates[0] > 110)
